@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-const SECRET = "mysecret";
+const SECRET = process.env.JWT_SECRET;   // use env var
 let users = [];
 
 export default function handler(req, res) {
@@ -14,3 +14,4 @@ export default function handler(req, res) {
   }
   res.status(405).end();
 }
+
